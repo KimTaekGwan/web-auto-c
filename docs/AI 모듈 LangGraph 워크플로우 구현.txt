@@ -1,0 +1,849 @@
+from typing import Dict, List, Any, TypedDict, Annotated, Optional, Tuple
+from pydantic import BaseModel, Field, AnyUrl, validator, HttpUrl
+from enum import Enum
+from langgraph.graph import StateGraph, END
+import asyncio
+from openai import AsyncOpenAI
+import httpx
+from urllib.parse import urlparse, urljoin
+import xml.etree.ElementTree as ET
+from playwright.async_api import async_playwright
+import re
+import logging
+
+# 로깅 설정
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger("url_extractor")
+
+# 모델 정의
+class DeviceType(str, Enum):
+    DESKTOP = "desktop"
+    TABLET = "tablet"
+    MOBILE = "mobile"
+
+class AgentType(str, Enum):
+    COORDINATOR = "coordinator"
+    SITEMAP = "sitemap"
+    HTML_PARSER = "html_parser"
+    VERIFICATION = "verification"
+
+class ModuleConfig(BaseModel):
+    min_urls: int = Field(5, description="최소 추출 URL 개수")
+    max_urls: int = Field(20, description="최대 추출 URL 개수")
+    max_iterations: int = Field(3, description="최대 작업 반복 횟수")
+    prioritize_main_sections: bool = Field(True, description="주요 섹션 우선 추출")
+    include_dynamic_pages: bool = Field(False, description="동적 페이지 포함 여부")
+    device_types: List[DeviceType] = Field(
+        [DeviceType.DESKTOP], description="캡처할 디바이스 유형"
+    )
+    normalize_urls: bool = Field(True, description="URL 정규화 수행 여부")
+
+class PageInfo(BaseModel):
+    url: HttpUrl
+    title: Optional[str] = None
+    priority: float = 1.0
+    depth: int = 0
+    parent_url: Optional[HttpUrl] = None
+    is_valid: Optional[bool] = None
+    source: List[AgentType] = Field(default_factory=list)
+    metadata: Dict = Field(default_factory=dict)
+
+class MenuStructure(BaseModel):
+    base_url: HttpUrl
+    pages: List[PageInfo] = Field(default_factory=list)
+    
+    @validator('pages')
+    def unique_urls(cls, v):
+        urls = set()
+        result = []
+        for page in v:
+            if str(page.url) not in urls:
+                urls.add(str(page.url))
+                result.append(page)
+        return result
+
+class AgentContext(BaseModel):
+    module_config: ModuleConfig
+    base_url: HttpUrl
+    normalized_url: Optional[HttpUrl] = None
+    iteration: int = 0
+    sitemap_result: Optional[MenuStructure] = None
+    html_result: Optional[MenuStructure] = None
+    final_result: Optional[MenuStructure] = None
+    errors: Dict[str, List[str]] = Field(default_factory=dict)
+    status: str = "initialized"
+
+# AI 모델 클라이언트 설정
+class LLMClient:
+    def __init__(self, api_key: str, model_name: str = "gpt-4o"):
+        self.client = AsyncOpenAI(api_key=api_key)
+        self.model_name = model_name
+    
+    async def generate(self, prompt: str, system_message: str = None) -> str:
+        messages = []
+        
+        if system_message:
+            messages.append({"role": "system", "content": system_message})
+        
+        messages.append({"role": "user", "content": prompt})
+        
+        response = await self.client.chat.completions.create(
+            model=self.model_name,
+            messages=messages,
+            temperature=0.2,
+        )
+        
+        return response.choices[0].message.content
+
+# 에이전트 구현
+class CoordinatorAgent:
+    def __init__(self, llm_client: LLMClient):
+        self.llm_client = llm_client
+        
+    async def plan_task(self, context: AgentContext) -> AgentContext:
+        """작업 계획 수립 및 상태 초기화"""
+        context.iteration += 1
+        logger.info(f"계획 수립 시작: 반복 {context.iteration}/{context.module_config.max_iterations}")
+        
+        if context.iteration > context.module_config.max_iterations:
+            context.status = "max_iterations_reached"
+            logger.warning(f"최대 반복 횟수 도달: {context.iteration}")
+            return context
+            
+        system_message = """
+        당신은 웹사이트 구조 분석 계획을 수립하는 전문가입니다.
+        주어진 URL에서 스크린샷할 페이지 목록을 효율적으로 추출하기 위한 계획을 수립해주세요.
+        """
+        
+        planning_prompt = f"""
+        URL: {context.base_url}
+        작업: 웹사이트 구조 분석 및 스크린샷할 핵심 페이지 추출
+        현재 반복: {context.iteration}/{context.module_config.max_iterations}
+        
+        이전 결과: {"있음" if context.final_result else "없음"}
+        이전 오류: {context.errors if context.errors else "없음"}
+        
+        다음 단계 계획을 수립해주세요:
+        1. URL 정규화 필요성 판단
+        2. 사이트맵 추출 전략
+        3. HTML 분석 접근 방법
+        4. 검증 단계에서 확인할 사항
+        """
+        
+        try:
+            plan_result = await self.llm_client.generate(planning_prompt, system_message)
+            logger.info(f"계획 수립 완료: {plan_result[:100]}...")
+        except Exception as e:
+            logger.error(f"계획 수립 오류: {str(e)}")
+            if "coordinator" not in context.errors:
+                context.errors["coordinator"] = []
+            context.errors["coordinator"].append(f"Planning error: {str(e)}")
+            
+        context.status = "planning_completed"
+        return context
+    
+    async def normalize_url(self, context: AgentContext) -> AgentContext:
+        """URL 정규화"""
+        if not context.module_config.normalize_urls:
+            logger.info("URL 정규화 건너뛰기 (설정에 의해 비활성화)")
+            context.normalized_url = context.base_url
+            context.status = "url_normalized"
+            return context
+            
+        try:
+            url_str = str(context.base_url)
+            parsed_url = urlparse(url_str)
+            
+            # 기본 정규화 (www 추가, trailing slash 등)
+            normalized_base = f"{parsed_url.scheme}://{parsed_url.netloc}"
+            if not normalized_base.endswith('/'):
+                normalized_base += '/'
+                
+            # AI로 지역화된 URL 분석
+            system_message = """
+            당신은 URL 정규화 전문가입니다. 제공된 URL을 분석하여 기본 도메인을 식별하고,
+            지역화된 하위 도메인(예: kr.example.com, en.example.com)이 있는 경우 메인 도메인으로 정규화해주세요.
+            """
+            
+            normalization_prompt = f"""
+            다음 URL을 분석해주세요: {url_str}
+            
+            1. 이 URL이 지역화된 하위 도메인을 사용하는지 판단하세요 (예: kr.example.com, en.example.com)
+            2. 만약 지역화된 하위 도메인이라면, 기본 도메인을 추출하세요 (예: example.com)
+            3. 웹사이트 디자인 수집이 목적이므로, 동일한 디자인을 가진 사이트는 중복 추출할 필요가 없습니다.
+            
+            결과를 다음 형식으로 반환하세요:
+            정규화된 URL: [URL]
+            """
+            
+            normalization_result = await self.llm_client.generate(normalization_prompt, system_message)
+            
+            # AI 응답에서 정규화된 URL 추출
+            normalized_url_match = re.search(r"정규화된 URL: (.+)", normalization_result)
+            if normalized_url_match:
+                extracted_url = normalized_url_match.group(1).strip()
+                if extracted_url and "://" in extracted_url:
+                    context.normalized_url = extracted_url
+                    logger.info(f"URL 정규화 결과: {context.base_url} -> {context.normalized_url}")
+                else:
+                    context.normalized_url = context.base_url
+            else:
+                context.normalized_url = context.base_url
+                
+        except Exception as e:
+            logger.error(f"URL 정규화 오류: {str(e)}")
+            context.normalized_url = context.base_url
+            if "normalize" not in context.errors:
+                context.errors["normalize"] = []
+            context.errors["normalize"].append(f"Normalization error: {str(e)}")
+            
+        context.status = "url_normalized"
+        return context
+
+class SitemapAgent:
+    def __init__(self):
+        self.client = httpx.AsyncClient(timeout=30.0, follow_redirects=True)
+        
+    async def extract_sitemap(self, context: AgentContext) -> AgentContext:
+        """sitemap.xml 찾기 및 파싱"""
+        base_url = context.normalized_url or context.base_url
+        logger.info(f"Sitemap 추출 시작: {base_url}")
+        
+        try:
+            # 1. robots.txt 확인
+            robots_url = f"{base_url}/robots.txt"
+            sitemap_locations = []
+            
+            try:
+                robots_response = await self.client.get(robots_url)
+                if robots_response.status_code == 200:
+                    robots_text = robots_response.text
+                    # robots.txt에서 Sitemap 지시문 찾기
+                    sitemap_matches = re.findall(r"Sitemap: (.+)", robots_text, re.IGNORECASE)
+                    sitemap_locations.extend(sitemap_matches)
+                    logger.info(f"robots.txt에서 발견된 sitemap 위치: {sitemap_locations}")
+            except Exception as e:
+                logger.warning(f"robots.txt 접근 오류: {str(e)}")
+            
+            # 2. 일반적인 sitemap 위치 확인
+            standard_locations = [
+                f"{base_url}/sitemap.xml",
+                f"{base_url}/sitemap_index.xml",
+                f"{base_url}/sitemap/sitemap.xml",
+                f"{base_url}/sitemaps/sitemap.xml"
+            ]
+            sitemap_locations.extend(standard_locations)
+            
+            # 3. sitemap 위치 확인 및 파싱
+            sitemap_urls = []
+            sitemap_found = False
+            
+            for sitemap_url in sitemap_locations:
+                try:
+                    response = await self.client.get(sitemap_url)
+                    if response.status_code == 200:
+                        sitemap_found = True
+                        sitemap_content = response.text
+                        
+                        # XML 파싱
+                        root = ET.fromstring(sitemap_content)
+                        
+                        # sitemap 또는 sitemap 인덱스인지 확인
+                        namespaces = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+                        
+                        # sitemap 인덱스 처리
+                        sitemap_tags = root.findall(".//sm:sitemap/sm:loc", namespaces)
+                        if sitemap_tags:
+                            logger.info(f"Sitemap 인덱스 발견: {sitemap_url}")
+                            for sitemap_tag in sitemap_tags:
+                                child_sitemap_url = sitemap_tag.text
+                                try:
+                                    child_response = await self.client.get(child_sitemap_url)
+                                    if child_response.status_code == 200:
+                                        child_root = ET.fromstring(child_response.text)
+                                        urls = child_root.findall(".//sm:url/sm:loc", namespaces)
+                                        for url in urls:
+                                            sitemap_urls.append({
+                                                "url": url.text,
+                                                "priority": self._get_priority(url, namespaces)
+                                            })
+                                except Exception as e:
+                                    logger.warning(f"하위 sitemap 처리 오류: {str(e)}")
+                        
+                        # 일반 sitemap 처리
+                        urls = root.findall(".//sm:url/sm:loc", namespaces)
+                        for url in urls:
+                            sitemap_urls.append({
+                                "url": url.text,
+                                "priority": self._get_priority(url, namespaces)
+                            })
+                            
+                        logger.info(f"Sitemap에서 {len(sitemap_urls)}개 URL 추출")
+                        break
+                except Exception as e:
+                    logger.warning(f"Sitemap 파싱 오류 ({sitemap_url}): {str(e)}")
+            
+            # 4. 결과 처리
+            pages = []
+            for item in sitemap_urls:
+                try:
+                    pages.append(PageInfo(
+                        url=item["url"],
+                        priority=item["priority"],
+                        source=[AgentType.SITEMAP]
+                    ))
+                except Exception as e:
+                    logger.warning(f"URL 처리 오류: {str(e)} - {item['url']}")
+            
+            # 우선순위에 따라 정렬 및 개수 제한
+            pages.sort(key=lambda p: p.priority, reverse=True)
+            pages = pages[:context.module_config.max_urls * 2]  # 최대 개수의 2배로 여유 확보
+            
+            context.sitemap_result = MenuStructure(
+                base_url=base_url,
+                pages=pages
+            )
+            
+            if sitemap_found:
+                context.status = "sitemap_extracted"
+            else:
+                context.status = "sitemap_not_found"
+                if "sitemap" not in context.errors:
+                    context.errors["sitemap"] = []
+                context.errors["sitemap"].append("Sitemap not found in standard locations")
+            
+        except Exception as e:
+            logger.error(f"Sitemap 추출 오류: {str(e)}")
+            if "sitemap" not in context.errors:
+                context.errors["sitemap"] = []
+            context.errors["sitemap"].append(f"Extraction error: {str(e)}")
+            context.status = "sitemap_failed"
+            
+        return context
+        
+    def _get_priority(self, url_element, namespaces):
+        """sitemap URL의 우선순위 추출"""
+        priority_element = url_element.find("../sm:priority", namespaces)
+        if priority_element is not None and priority_element.text:
+            try:
+                return float(priority_element.text)
+            except ValueError:
+                pass
+        return 0.5  # 기본 우선순위
+
+class HTMLParserAgent:
+    def __init__(self, llm_client: LLMClient):
+        self.llm_client = llm_client
+        
+    async def parse_html(self, context: AgentContext) -> AgentContext:
+        """웹페이지 HTML 분석하여 메뉴 구조 추출"""
+        base_url = context.normalized_url or context.base_url
+        logger.info(f"HTML 분석 시작: {base_url}")
+        
+        try:
+            # 1. 웹페이지 HTML 가져오기
+            async with async_playwright() as p:
+                browser = await p.chromium.launch()
+                page = await browser.new_page()
+                await page.goto(str(base_url), wait_until="networkidle")
+                
+                # 2. HTML 추출
+                html_content = await page.content()
+                
+                # 3. 메뉴 요소 직접 추출
+                nav_elements = []
+                
+                # 네비게이션 메뉴 추출
+                nav_selectors = ["nav", "header nav", ".navigation", ".menu", "#menu", ".navbar", "#navbar"]
+                for selector in nav_selectors:
+                    try:
+                        elements = await page.query_selector_all(selector)
+                        for element in elements:
+                            nav_html = await element.inner_html()
+                            if nav_html and len(nav_html) > 100:  # 최소 길이 확인
+                                nav_elements.append(nav_html)
+                    except Exception as e:
+                        logger.warning(f"메뉴 요소 추출 오류 ({selector}): {str(e)}")
+                
+                # 푸터 메뉴 추출
+                footer_selectors = ["footer", ".footer", "#footer"]
+                for selector in footer_selectors:
+                    try:
+                        elements = await page.query_selector_all(selector)
+                        for element in elements:
+                            footer_html = await element.inner_html()
+                            if footer_html and len(footer_html) > 100:
+                                nav_elements.append(footer_html)
+                    except Exception as e:
+                        logger.warning(f"푸터 요소 추출 오류 ({selector}): {str(e)}")
+                
+                # 링크 직접 추출
+                links = await page.evaluate("""
+                    () => {
+                        const links = Array.from(document.querySelectorAll('a[href]'));
+                        return links.map(link => {
+                            return {
+                                text: link.textContent.trim(),
+                                href: link.href,
+                                isMenu: link.closest('nav, header, .menu, #menu, .navbar, #navbar') !== null
+                            };
+                        }).filter(link => 
+                            link.href.startsWith(window.location.origin) && 
+                            link.text && 
+                            !link.href.includes('#') &&
+                            !link.href.endsWith('.jpg') &&
+                            !link.href.endsWith('.png') &&
+                            !link.href.endsWith('.pdf')
+                        );
+                    }
+                """)
+                
+                await browser.close()
+                
+                # 4. Claude API로 메뉴 구조 분석
+                menu_elements_str = "\n\n".join([f"메뉴 요소 {i+1}:\n{element}" for i, element in enumerate(nav_elements)])
+                
+                system_message = """
+                당신은 웹사이트 메뉴 구조를 분석하는 전문가입니다.
+                HTML 코드에서 메뉴 구조를 식별하고, 중요한 페이지 목록을 추출해야 합니다.
+                결과는 JSON 형식으로 제공해주세요.
+                """
+                
+                analysis_prompt = f"""
+                다음 웹사이트의 메뉴 구조를 분석해주세요:
+                
+                기본 URL: {base_url}
+                
+                추출된 메뉴 요소:
+                {menu_elements_str[:5000]}  # 길이 제한
+                
+                추출된 링크 목록:
+                {str(links[:50])}  # 처음 50개만
+                
+                다음 요소에 주목하세요:
+                - 주요 네비게이션 메뉴
+                - 드롭다운 서브메뉴
+                - 푸터 메뉴
+                - 사이트맵 링크
+                
+                최대 {context.module_config.max_urls}개의 중요한 페이지를 선별하여 JSON 형식으로 반환해주세요:
+                
+                ```json
+                {
+                  "pages": [
+                    {
+                      "url": "전체 URL",
+                      "title": "메뉴 또는 링크 텍스트",
+                      "priority": 0.9,  // 중요도 (0.1-1.0)
+                      "depth": 0        // 메뉴 깊이 (0=메인메뉴, 1=서브메뉴)
+                    },
+                    ...
+                  ]
+                }
+                ```
+                """
+                
+                analysis_result = await self.llm_client.generate(analysis_prompt, system_message)
+                
+                # 5. JSON 추출 및 MenuStructure 생성
+                json_match = re.search(r"```json(.*?)```", analysis_result, re.DOTALL)
+                json_str = json_match.group(1) if json_match else analysis_result
+                
+                import json
+                try:
+                    menu_data = json.loads(json_str)
+                    pages = []
+                    
+                    for page_info in menu_data.get("pages", []):
+                        try:
+                            # URL 정규화
+                            page_url = page_info["url"]
+                            if not page_url.startswith(("http://", "https://")):
+                                page_url = urljoin(str(base_url), page_url)
+                                
+                            pages.append(PageInfo(
+                                url=page_url,
+                                title=page_info.get("title", ""),
+                                priority=page_info.get("priority", 0.5),
+                                depth=page_info.get("depth", 0),
+                                source=[AgentType.HTML_PARSER]
+                            ))
+                        except Exception as e:
+                            logger.warning(f"페이지 정보 처리 오류: {str(e)} - {page_info}")
+                    
+                    context.html_result = MenuStructure(
+                        base_url=base_url,
+                        pages=pages
+                    )
+                    
+                    context.status = "html_parsed"
+                    logger.info(f"HTML 분석 완료: {len(pages)}개 페이지 추출")
+                    
+                except json.JSONDecodeError as e:
+                    logger.error(f"JSON 파싱 오류: {str(e)}")
+                    if "html" not in context.errors:
+                        context.errors["html"] = []
+                    context.errors["html"].append(f"JSON parsing error: {str(e)}")
+                    context.status = "html_failed"
+            
+        except Exception as e:
+            logger.error(f"HTML 분석 오류: {str(e)}")
+            if "html" not in context.errors:
+                context.errors["html"] = []
+            context.errors["html"].append(f"Parsing error: {str(e)}")
+            context.status = "html_failed"
+            
+        return context
+
+class VerificationAgent:
+    def __init__(self):
+        self.client = httpx.AsyncClient(timeout=10.0, follow_redirects=True)
+        
+    async def verify_results(self, context: AgentContext) -> AgentContext:
+        """결과 검증 및 통합"""
+        logger.info("결과 검증 및 통합 시작")
+        
+        # 두 결과 중 하나라도 있으면 진행
+        sitemap_pages = context.sitemap_result.pages if context.sitemap_result else []
+        html_pages = context.html_result.pages if context.html_result else []
+        
+        if not sitemap_pages and not html_pages:
+            context.status = "verification_failed"
+            context.errors["verification"] = ["No pages found from either sitemap or HTML analysis"]
+            logger.error("검증 실패: 추출된 페이지 없음")
+            return context
+        
+        # 페이지 통합 및 중복 제거
+        all_pages = {}  # URL을 키로 한 딕셔너리
+        
+        # sitemap 결과 추가
+        for page in sitemap_pages:
+            all_pages[str(page.url)] = page
+        
+        # HTML 결과 병합
+        for page in html_pages:
+            page_url = str(page.url)
+            if page_url in all_pages:
+                # 기존 페이지 정보 업데이트
+                existing = all_pages[page_url]
+                if AgentType.HTML_PARSER not in existing.source:
+                    existing.source.append(AgentType.HTML_PARSER)
+                # 우선순위 병합 로직
+                existing.priority = max(existing.priority, page.priority)
+                if page.title and not existing.title:
+                    existing.title = page.title
+            else:
+                all_pages[page_url] = page
+        
+        # URL 유효성 검증 (선택적)
+        if context.iteration < context.module_config.max_iterations:
+            # 모든 URL 검증은 시간이 많이 소요될 수 있으므로,
+            # 우선순위가 높은 URL만 선택적으로 검증
+            high_priority_urls = sorted(
+                all_pages.values(), 
+                key=lambda p: p.priority, 
+                reverse=True
+            )[:10]  # 상위 10개만
+            
+            verification_tasks = []
+            for page in high_priority_urls:
+                verification_tasks.append(self.verify_url(str(page.url)))
+            
+            if verification_tasks:
+                verification_results = await asyncio.gather(*verification_tasks, return_exceptions=True)
+                
+                for i, result in enumerate(verification_results):
+                    if isinstance(result, Exception):
+                        high_priority_urls[i].is_valid = False
+                        logger.warning(f"URL 검증 오류: {str(result)} - {high_priority_urls[i].url}")
+                    else:
+                        high_priority_urls[i].is_valid = result
+                        if not result:
+                            logger.warning(f"유효하지 않은 URL: {high_priority_urls[i].url}")
+        
+        # 우선순위에 따라 정렬 및 개수 제한
+        # 1. 두 소스에서 모두 발견된 페이지에 가중치 부여
+        for page in all_pages.values():
+            if len(page.source) > 1:
+                page.priority += 0.2
+                
+        # 2. 유효성 확인된 페이지에 가중치 부여
+        for page in all_pages.values():
+            if page.is_valid is True:  # 명시적으로 True인 경우만
+                page.priority += 0.1
+                
+        # 3. 메인 메뉴 항목에 가중치 부여
+        for page in all_pages.values():
+            if page.depth == 0:
+                page.priority += 0.1
+                
+        # 최종 정렬 및 개수 제한
+        final_pages = sorted(
+            all_pages.values(),
+            key=lambda p: p.priority,
+            reverse=True
+        )
+        
+        # 최소 및 최대 개수 제한 적용
+        max_urls = context.module_config.max_urls
+        min_urls = min(context.module_config.min_urls, len(final_pages))
+        final_pages = final_pages[:max_urls]
+        
+        # 최종 결과 저장
+        context.final_result = MenuStructure(
+            base_url=context.normalized_url or context.base_url,
+            pages=final_pages
+        )
+        
+        context.status = "verification_completed"
+        logger.info(f"검증 완료: 최종 {len(final_pages)}개 페이지 (최소 {min_urls}, 최대 {max_urls})")
+        return context
+        
+    async def verify_url(self, url: str) -> bool:
+        """URL 유효성 검증"""
+        try:
+            response = await self.client.head(url)
+            return 200 <= response.status_code < 400
+        except Exception:
+            return False
+
+class FinalizationAgent:
+    def __init__(self, llm_client: LLMClient):
+        self.llm_client = llm_client
+        
+    async def finalize_results(self, context: AgentContext) -> AgentContext:
+        """최종 결과 마무리"""
+        logger.info("최종 결과 마무리 시작")
+        
+        if not context.final_result or not context.final_result.pages:
+            if context.iteration < context.module_config.max_iterations:
+                context.status = "retry_needed"
+                logger.warning("결과 없음: 재시도 필요")
+                return context
+            else:
+                context.status = "finalization_failed"
+                context.errors["finalization"] = ["No pages found after all iterations"]
+                logger.error("최종화 실패: 모든 반복 후에도 페이지 없음")
+                return context
+        
+        # 1. 결과 요약
+        pages = context.final_result.pages
+        summary = {
+            "total_pages": len(pages),
+            "source_distribution": {
+                "sitemap_only": len([p for p in pages if len(p.source) == 1 and AgentType.SITEMAP in p.source]),
+                "html_only": len([p for p in pages if len(p.source) == 1 and AgentType.HTML_PARSER in p.source]),
+                "both_sources": len([p for p in pages if len(p.source) > 1])
+            },
+            "depth_distribution": {}
+        }
+        
+        # 깊이별 분포 계산
+        for page in pages:
+            depth = page.depth
+            if depth not in summary["depth_distribution"]:
+                summary["depth_distribution"][depth] = 0
+            summary["depth_distribution"][depth] += 1
+            
+        # 2. 최종 정리 및 보완
+        system_message = """
+        당신은 웹사이트 메뉴 구조 최종 검토 전문가입니다.
+        추출된 페이지 목록을 검토하고, 주요 섹션이 누락되었는지 확인하세요.
+        """
+        
+        review_prompt = f"""
+        다음 웹사이트에서 추출된 페이지 목록을 검토해주세요:
+        
+        웹사이트: {context.base_url}
+        
+        추출된 페이지 목록:
+        {[{"url": p.url, "title": p.title, "priority": p.priority, "depth": p.depth} for p in pages[:20]]}
+        
+        요약 정보:
+        {summary}
+        
+        다음을 검토해주세요:
+        1. 주요 섹션이 누락되었는가? (예: 소개, 제품, 서비스, 연락처)
+        2. 페이지 우선순위가 적절한가?
+        3. 페이지 깊이 분포가 적절한가?
+        
+        검토 의견을 제공해주세요. 심각한 문제가 있다면 "재시도 필요"라고 명시해주세요.
+        """
+        
+        try:
+            review_result = await self.llm_client.generate(review_prompt, system_message)
+            logger.info(f"검토 결과: {review_result[:100]}...")
+            
+            # 재시도 필요 여부 확인
+            if "재시도 필요" in review_result and context.iteration < context.module_config.max_iterations:
+                context.status = "retry_needed"
+                logger.warning("검토 결과 재시도 필요")
+            else:
+                context.status = "completed"
+                logger.info("최종화 완료")
+                
+        except Exception as e:
+            logger.error(f"최종 검토 오류: {str(e)}")
+            context.status = "completed"  # 오류가 있어도 완료 처리
+            
+        return context
+
+# LangGraph 워크플로우 정의
+def create_workflow(config: ModuleConfig = None, api_key: str = None):
+    # 기본 설정 적용
+    if config is None:
+        config = ModuleConfig()
+    
+    # LLM 클라이언트 생성
+    llm_client = LLMClient(api_key=api_key or "your-api-key-here")
+    
+    # 에이전트 초기화
+    coordinator = CoordinatorAgent(llm_client)
+    sitemap_agent = SitemapAgent()
+    html_parser = HTMLParserAgent(llm_client)
+    verification_agent = VerificationAgent()
+    finalization_agent = FinalizationAgent(llm_client)
+    
+    # 상태 정의
+    class GraphState(TypedDict):
+        context: AgentContext
+    
+    # 노드 함수 정의
+    async def plan_node(state: GraphState) -> GraphState:
+        state["context"] = await coordinator.plan_task(state["context"])
+        return state
+        
+    async def normalize_url_node(state: GraphState) -> GraphState:
+        state["context"] = await coordinator.normalize_url(state["context"])
+        return state
+        
+    async def extract_sitemap_node(state: GraphState) -> GraphState:
+        state["context"] = await sitemap_agent.extract_sitemap(state["context"])
+        return state
+        
+    async def parse_html_node(state: GraphState) -> GraphState:
+        state["context"] = await html_parser.parse_html(state["context"])
+        return state
+        
+    async def verify_results_node(state: GraphState) -> GraphState:
+        state["context"] = await verification_agent.verify_results(state["context"])
+        return state
+        
+    async def finalize_node(state: GraphState) -> GraphState:
+        state["context"] = await finalization_agent.finalize_results(state["context"])
+        return state
+    
+    # 다음 단계 결정 함수들
+    def should_parse_html(state: GraphState) -> str:
+        """sitemap 결과에 따라 HTML 파싱 여부 결정"""
+        context = state["context"]
+        
+        # sitemap 실패하거나 결과가 부족한 경우 HTML 파싱 진행
+        if (context.status == "sitemap_failed" or 
+            context.status == "sitemap_not_found" or
+            (context.sitemap_result and len(context.sitemap_result.pages) < context.module_config.min_urls)):
+            return "continue"
+        
+        # sitemap으로 충분한 결과를 얻은 경우 HTML 파싱 건너뛰기
+        if (context.sitemap_result and 
+            len(context.sitemap_result.pages) >= context.module_config.max_urls):
+            return "skip_html"
+            
+        # 기본적으로는 HTML 파싱 진행
+        return "continue"
+    
+    def check_completion(state: GraphState) -> str:
+        """작업 완료 여부 확인"""
+        context = state["context"]
+        
+        if context.status == "retry_needed":
+            return "retry"
+        else:
+            return "complete"
+    
+    # 그래프 생성
+    workflow = StateGraph(GraphState)
+    
+    # 노드 추가
+    workflow.add_node("plan", plan_node)
+    workflow.add_node("normalize_url", normalize_url_node)
+    workflow.add_node("extract_sitemap", extract_sitemap_node)
+    workflow.add_node("parse_html", parse_html_node)
+    workflow.add_node("verify_results", verify_results_node)
+    workflow.add_node("finalize", finalize_node)
+    
+    # 에지 정의
+    workflow.add_edge("plan", "normalize_url")
+    workflow.add_edge("normalize_url", "extract_sitemap")
+    
+    # 조건부 에지 - sitemap 결과에 따라 HTML 파싱 여부 결정
+    workflow.add_conditional_edges(
+        "extract_sitemap",
+        should_parse_html,
+        {
+            "continue": "parse_html",
+            "skip_html": "verify_results"
+        }
+    )
+    
+    workflow.add_edge("parse_html", "verify_results")
+    workflow.add_edge("verify_results", "finalize")
+    
+    # 최종 결과에 따른 재시도 또는 완료
+    workflow.add_conditional_edges(
+        "finalize",
+        check_completion,
+        {
+            "complete": END,
+            "retry": "plan"
+        }
+    )
+    
+    # 시작 노드 설정
+    workflow.set_entry_point("plan")
+    
+    return workflow.compile()
+
+# 워크플로우 실행 함수
+async def execute_workflow(url: str, config: ModuleConfig = None, api_key: str = None):
+    """URL 추출 워크플로우 실행"""
+    if config is None:
+        config = ModuleConfig()
+        
+    # 초기 상태 설정
+    initial_context = AgentContext(
+        module_config=config,
+        base_url=url
+    )
+    
+    initial_state = {"context": initial_context}
+    
+    # 워크플로우 생성 및 실행
+    workflow = create_workflow(config, api_key)
+    result = await workflow.ainvoke(initial_state)
+    
+    return result["context"]
+
+# 사용 예시
+# async def main():
+#     config = ModuleConfig(
+#         min_urls=5,
+#         max_urls=20,
+#         max_iterations=2
+#     )
+#     
+#     result = await execute_workflow(
+#         url="https://example.com",
+#         config=config,
+#         api_key="your-api-key"
+#     )
+#     
+#     print(f"상태: {result.status}")
+#     print(f"추출된 페이지 수: {len(result.final_result.pages) if result.final_result else 0}")
+#     if result.final_result and result.final_result.pages:
+#         for page in result.final_result.pages:
+#             print(f"- {page.url} (우선순위: {page.priority})")
+#
+# if __name__ == "__main__":
+#     import asyncio
+#     asyncio.run(main())

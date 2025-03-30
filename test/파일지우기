@@ -1,0 +1,1 @@
+find /Users/ktg/Desktop/web-auto/test -name "__pycache__" -type d -exec rm -rf {} \;

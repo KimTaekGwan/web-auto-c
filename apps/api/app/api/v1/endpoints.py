@@ -188,7 +188,10 @@ async def read_tags(
 
 @router.get("/tags/{tag_id}", response_model=TagSchema, tags=["Tags"])
 async def read_tag(tag_id: UUID, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Tag).filter(Tag.id == tag_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_tag_id = str(tag_id).replace("-", "")
+
+    result = await db.execute(select(Tag).filter(Tag.id == normalized_tag_id))
     db_tag = result.scalar_one_or_none()
     if db_tag is None:
         raise HTTPException(status_code=404, detail="Tag not found")
@@ -197,7 +200,10 @@ async def read_tag(tag_id: UUID, db: AsyncSession = Depends(get_db)):
 
 @router.put("/tags/{tag_id}", response_model=TagSchema, tags=["Tags"])
 async def update_tag(tag_id: UUID, tag: TagCreate, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Tag).filter(Tag.id == tag_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_tag_id = str(tag_id).replace("-", "")
+
+    result = await db.execute(select(Tag).filter(Tag.id == normalized_tag_id))
     db_tag = result.scalar_one_or_none()
     if db_tag is None:
         raise HTTPException(status_code=404, detail="Tag not found")
@@ -212,7 +218,10 @@ async def update_tag(tag_id: UUID, tag: TagCreate, db: AsyncSession = Depends(ge
 
 @router.delete("/tags/{tag_id}", tags=["Tags"])
 async def delete_tag(tag_id: UUID, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Tag).filter(Tag.id == tag_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_tag_id = str(tag_id).replace("-", "")
+
+    result = await db.execute(select(Tag).filter(Tag.id == normalized_tag_id))
     db_tag = result.scalar_one_or_none()
     if db_tag is None:
         raise HTTPException(status_code=404, detail="Tag not found")
@@ -265,7 +274,10 @@ async def read_site(site_id: UUID, db: AsyncSession = Depends(get_db)):
 async def update_site(
     site_id: UUID, site: SiteCreate, db: AsyncSession = Depends(get_db)
 ):
-    result = await db.execute(select(Site).filter(Site.id == site_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_site_id = str(site_id).replace("-", "")
+
+    result = await db.execute(select(Site).filter(Site.id == normalized_site_id))
     db_site = result.scalar_one_or_none()
     if db_site is None:
         raise HTTPException(status_code=404, detail="Site not found")
@@ -280,7 +292,10 @@ async def update_site(
 
 @router.delete("/sites/{site_id}", tags=["Sites"])
 async def delete_site(site_id: UUID, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Site).filter(Site.id == site_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_site_id = str(site_id).replace("-", "")
+
+    result = await db.execute(select(Site).filter(Site.id == normalized_site_id))
     db_site = result.scalar_one_or_none()
     if db_site is None:
         raise HTTPException(status_code=404, detail="Site not found")
@@ -295,12 +310,16 @@ async def delete_site(site_id: UUID, db: AsyncSession = Depends(get_db)):
 async def add_tag_to_site(
     site_id: UUID, tag_id: UUID, db: AsyncSession = Depends(get_db)
 ):
-    site_result = await db.execute(select(Site).filter(Site.id == site_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_site_id = str(site_id).replace("-", "")
+    normalized_tag_id = str(tag_id).replace("-", "")
+
+    site_result = await db.execute(select(Site).filter(Site.id == normalized_site_id))
     db_site = site_result.scalar_one_or_none()
     if db_site is None:
         raise HTTPException(status_code=404, detail="Site not found")
 
-    tag_result = await db.execute(select(Tag).filter(Tag.id == tag_id))
+    tag_result = await db.execute(select(Tag).filter(Tag.id == normalized_tag_id))
     db_tag = tag_result.scalar_one_or_none()
     if db_tag is None:
         raise HTTPException(status_code=404, detail="Tag not found")
@@ -314,12 +333,16 @@ async def add_tag_to_site(
 async def remove_tag_from_site(
     site_id: UUID, tag_id: UUID, db: AsyncSession = Depends(get_db)
 ):
-    site_result = await db.execute(select(Site).filter(Site.id == site_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_site_id = str(site_id).replace("-", "")
+    normalized_tag_id = str(tag_id).replace("-", "")
+
+    site_result = await db.execute(select(Site).filter(Site.id == normalized_site_id))
     db_site = site_result.scalar_one_or_none()
     if db_site is None:
         raise HTTPException(status_code=404, detail="Site not found")
 
-    tag_result = await db.execute(select(Tag).filter(Tag.id == tag_id))
+    tag_result = await db.execute(select(Tag).filter(Tag.id == normalized_tag_id))
     db_tag = tag_result.scalar_one_or_none()
     if db_tag is None:
         raise HTTPException(status_code=404, detail="Tag not found")
@@ -358,7 +381,9 @@ async def read_captures(
     if device:
         query = query.filter(Capture.devices.contains([{"name": device}]))
     if site_id:
-        query = query.filter(Capture.site_id == site_id)
+        # UUID 형식 정규화 (하이픈 제거)
+        normalized_site_id = str(site_id).replace("-", "")
+        query = query.filter(Capture.site_id == normalized_site_id)
 
     query = query.offset(skip).limit(limit)
     result = await db.execute(query)
@@ -389,7 +414,12 @@ async def read_capture(capture_id: UUID, db: AsyncSession = Depends(get_db)):
 async def update_capture(
     capture_id: UUID, capture: CaptureCreate, db: AsyncSession = Depends(get_db)
 ):
-    result = await db.execute(select(Capture).filter(Capture.id == capture_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_capture_id = str(capture_id).replace("-", "")
+
+    result = await db.execute(
+        select(Capture).filter(Capture.id == normalized_capture_id)
+    )
     db_capture = result.scalar_one_or_none()
     if db_capture is None:
         raise HTTPException(status_code=404, detail="Capture not found")
@@ -404,7 +434,12 @@ async def update_capture(
 
 @router.delete("/captures/{capture_id}", tags=["Captures"])
 async def delete_capture(capture_id: UUID, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Capture).filter(Capture.id == capture_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_capture_id = str(capture_id).replace("-", "")
+
+    result = await db.execute(
+        select(Capture).filter(Capture.id == normalized_capture_id)
+    )
     db_capture = result.scalar_one_or_none()
     if db_capture is None:
         raise HTTPException(status_code=404, detail="Capture not found")
@@ -421,7 +456,12 @@ async def delete_capture(capture_id: UUID, db: AsyncSession = Depends(get_db)):
 async def update_capture_status(
     capture_id: UUID, status: str, db: AsyncSession = Depends(get_db)
 ):
-    result = await db.execute(select(Capture).filter(Capture.id == capture_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_capture_id = str(capture_id).replace("-", "")
+
+    result = await db.execute(
+        select(Capture).filter(Capture.id == normalized_capture_id)
+    )
     db_capture = result.scalar_one_or_none()
     if db_capture is None:
         raise HTTPException(status_code=404, detail="Capture not found")
@@ -592,7 +632,10 @@ async def read_page(page_id: UUID, db: AsyncSession = Depends(get_db)):
 async def update_page(
     page_id: UUID, page: PageCreate, db: AsyncSession = Depends(get_db)
 ):
-    result = await db.execute(select(Page).filter(Page.id == page_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_page_id = str(page_id).replace("-", "")
+
+    result = await db.execute(select(Page).filter(Page.id == normalized_page_id))
     db_page = result.scalar_one_or_none()
     if db_page is None:
         raise HTTPException(status_code=404, detail="Page not found")
@@ -607,7 +650,10 @@ async def update_page(
 
 @router.delete("/pages/{page_id}", tags=["Pages"])
 async def delete_page(page_id: UUID, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Page).filter(Page.id == page_id))
+    # UUID 형식 정규화 (하이픈 제거)
+    normalized_page_id = str(page_id).replace("-", "")
+
+    result = await db.execute(select(Page).filter(Page.id == normalized_page_id))
     db_page = result.scalar_one_or_none()
     if db_page is None:
         raise HTTPException(status_code=404, detail="Page not found")

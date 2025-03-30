@@ -1,0 +1,777 @@
+2025-03-30 21:52:38,800 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 21:52:38,800 - web_capture - INFO - 1개 URL, 1개 디바이스 유형으로 캡처 시작
+2025-03-30 21:52:38,801 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 21:52:39,605 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 21:52:39,824 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 21:52:49,612 - web_capture - INFO - 캡처 완료: 20250330_215238_desktop_5e2b1732.png
+2025-03-30 21:52:49,664 - web_capture - INFO - 브라우저 종료
+2025-03-30 21:52:49,664 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 21:52:49,665 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_215249.json
+2025-03-30 22:02:08,379 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:02:08,380 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:02:09,021 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:02:09,217 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:02:17,031 - web_capture - INFO - 캡처 완료: 20250330_220208_desktop_5e2b1732.png
+2025-03-30 22:02:17,079 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:02:17,079 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:02:17,080 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_220217.json
+2025-03-30 22:02:59,034 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:02:59,034 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:02:59,615 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:02:59,825 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:03:10,065 - web_capture - INFO - 캡처 완료: 20250330_220259_desktop_5e2b1732.png
+2025-03-30 22:03:10,106 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:03:10,106 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:03:10,107 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_220310.json
+2025-03-30 22:03:46,735 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:03:46,736 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:03:47,350 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:03:47,557 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:03:57,958 - web_capture - INFO - 캡처 완료: 20250330_220346_desktop_5e2b1732.png
+2025-03-30 22:03:58,010 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:03:58,010 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:03:58,012 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_220358.json
+2025-03-30 22:09:26,005 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:09:26,894 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:09:26,907 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:09:26,931 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:09:27,170 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:09:27,172 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-30 22:09:27,172 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-30 22:09:37,115 - web_capture - INFO - 캡처 완료: 20250330_220926_desktop_5e2b1732.png
+2025-03-30 22:09:38,700 - web_capture - INFO - 캡처 완료: 20250330_220926_tablet_5e2b1732.png
+2025-03-30 22:09:39,701 - web_capture - INFO - 캡처 완료: 20250330_220926_mobile_5e2b1732.png
+2025-03-30 22:09:39,751 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:09:39,751 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:09:39,752 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_220939.json
+2025-03-30 22:15:41,238 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:15:41,854 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:15:41,990 - web_capture - INFO - 페이지 로딩 중: https://example.com/ (DeviceType.DESKTOP)
+2025-03-30 22:15:46,494 - web_capture - INFO - GIF 생성 시작: captures/20250330_221541_desktop_c984d06a_scroll.gif
+2025-03-30 22:16:03,178 - web_capture - INFO - GIF 생성 완료: captures/20250330_221541_desktop_c984d06a_scroll.gif
+2025-03-30 22:16:03,766 - web_capture - INFO - 캡처 완료: 20250330_221541_desktop_c984d06a.png
+2025-03-30 22:16:03,795 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:16:03,795 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:16:03,796 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_221603.json
+2025-03-30 22:16:18,894 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:16:19,577 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:16:19,742 - web_capture - INFO - 페이지 로딩 중: https://imweb.md/ (DeviceType.DESKTOP)
+2025-03-30 22:16:21,078 - web_capture - WARNING - 캡처 실패 (1/2): Page.goto: net::ERR_NAME_NOT_RESOLVED at https://imweb.md/
+Call log:
+  - navigating to "https://imweb.md/", waiting until "networkidle"
+
+2025-03-30 22:16:22,137 - web_capture - INFO - 페이지 로딩 중: https://imweb.md/ (DeviceType.DESKTOP)
+2025-03-30 22:16:22,141 - web_capture - WARNING - 캡처 실패 (2/2): Page.goto: net::ERR_NAME_NOT_RESOLVED at https://imweb.md/
+Call log:
+  - navigating to "https://imweb.md/", waiting until "networkidle"
+
+2025-03-30 22:16:23,195 - web_capture - INFO - 페이지 로딩 중: https://imweb.md/ (DeviceType.DESKTOP)
+2025-03-30 22:16:23,199 - web_capture - WARNING - 캡처 실패 (3/2): Page.goto: net::ERR_NAME_NOT_RESOLVED at https://imweb.md/
+Call log:
+  - navigating to "https://imweb.md/", waiting until "networkidle"
+
+2025-03-30 22:16:23,219 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:16:23,219 - web_capture - INFO - 캡처 작업 완료 (성공: 0, 실패: 1)
+2025-03-30 22:16:23,219 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_221623.json
+2025-03-30 22:16:35,934 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:16:36,543 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:16:36,742 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:16:44,042 - web_capture - INFO - GIF 생성 시작: captures/20250330_221635_desktop_5e2b1732_scroll.gif
+2025-03-30 22:17:09,618 - web_capture - INFO - GIF 생성 완료: captures/20250330_221635_desktop_5e2b1732_scroll.gif
+2025-03-30 22:17:10,222 - web_capture - INFO - 캡처 완료: 20250330_221635_desktop_5e2b1732.png
+2025-03-30 22:17:10,324 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:17:10,324 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:17:10,325 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_221710.json
+2025-03-30 22:18:06,203 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:18:06,804 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:18:07,026 - web_capture - INFO - 페이지 로딩 중: https://www.airmax-dn8.com/ (DeviceType.DESKTOP)
+2025-03-30 22:18:10,844 - web_capture - INFO - GIF 생성 시작: captures/20250330_221806_desktop_ee352eca_scroll.gif
+2025-03-30 22:18:42,516 - web_capture - INFO - GIF 생성 완료: captures/20250330_221806_desktop_ee352eca_scroll.gif
+2025-03-30 22:18:43,253 - web_capture - INFO - 캡처 완료: 20250330_221806_desktop_ee352eca.png
+2025-03-30 22:18:43,297 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:18:43,297 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:18:43,298 - web_capture - INFO - 메타데이터 저장 완료: captures/metadata_20250330_221843.json
+2025-03-30 22:20:28,566 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:20:29,159 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:20:29,354 - web_capture - INFO - 페이지 로딩 중: https://www.airmax-dn8.com/ (DeviceType.DESKTOP)
+2025-03-30 22:20:33,277 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222028_desktop_ee352eca_scroll.gif
+2025-03-30 22:21:05,636 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222028_desktop_ee352eca_scroll.gif
+2025-03-30 22:21:06,359 - web_capture - INFO - 캡처 완료: 20250330_222028_desktop_ee352eca.png
+2025-03-30 22:21:06,400 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:21:06,400 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:21:06,400 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222106.json
+2025-03-30 22:21:42,200 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:21:42,876 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:21:42,880 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:21:42,890 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:21:43,099 - web_capture - INFO - 페이지 로딩 중: https://youtube.com/ (DeviceType.TABLET)
+2025-03-30 22:21:43,100 - web_capture - INFO - 페이지 로딩 중: https://youtube.com/ (DeviceType.DESKTOP)
+2025-03-30 22:21:43,101 - web_capture - INFO - 페이지 로딩 중: https://youtube.com/ (DeviceType.MOBILE)
+2025-03-30 22:21:48,570 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222142_tablet_e62e2446_scroll.gif
+2025-03-30 22:21:48,664 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222142_desktop_e62e2446_scroll.gif
+2025-03-30 22:21:48,879 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222142_mobile_e62e2446_scroll.gif
+2025-03-30 22:22:01,249 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222142_mobile_e62e2446_scroll.gif
+2025-03-30 22:22:01,786 - web_capture - INFO - 캡처 완료: 20250330_222142_mobile_e62e2446.png
+2025-03-30 22:22:03,384 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222142_tablet_e62e2446_scroll.gif
+2025-03-30 22:22:03,949 - web_capture - INFO - 캡처 완료: 20250330_222142_tablet_e62e2446.png
+2025-03-30 22:22:11,247 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222142_desktop_e62e2446_scroll.gif
+2025-03-30 22:22:11,860 - web_capture - INFO - 캡처 완료: 20250330_222142_desktop_e62e2446.png
+2025-03-30 22:22:11,921 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:22:11,921 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:22:11,922 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222211.json
+2025-03-30 22:22:59,742 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:23:00,355 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:23:00,562 - web_capture - INFO - 페이지 로딩 중: https://www.airmax-dn8.com/ (DeviceType.DESKTOP)
+2025-03-30 22:23:11,213 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:23:11,639 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:23:11,836 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:23:20,918 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222311_desktop_02d9297c_scroll.gif
+2025-03-30 22:23:48,478 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222311_desktop_02d9297c_scroll.gif
+2025-03-30 22:23:49,186 - web_capture - INFO - 캡처 완료: 20250330_222311_desktop_02d9297c.png
+2025-03-30 22:23:49,260 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:23:49,260 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:23:49,263 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222349.json
+2025-03-30 22:25:13,700 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:25:14,308 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:25:14,512 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:25:21,684 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222513_desktop_02d9297c_scroll.gif
+2025-03-30 22:25:49,769 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222513_desktop_02d9297c_scroll.gif
+2025-03-30 22:25:50,441 - web_capture - INFO - 캡처 완료: 20250330_222513_desktop_02d9297c.png
+2025-03-30 22:25:50,518 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:25:50,519 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:25:50,521 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222550.json
+2025-03-30 22:26:09,701 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:26:10,511 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:26:10,692 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:26:20,899 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222609_desktop_0c707c96_scroll.gif
+2025-03-30 22:26:44,447 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222609_desktop_0c707c96_scroll.gif
+2025-03-30 22:26:45,047 - web_capture - INFO - 캡처 완료: 20250330_222609_desktop_0c707c96.png
+2025-03-30 22:26:45,126 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:26:45,126 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:26:45,127 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222645.json
+2025-03-30 22:29:16,147 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:29:16,689 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:29:16,850 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:29:25,383 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_222916_desktop_02d9297c_scroll.gif
+2025-03-30 22:29:25,894 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:29:48,390 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_222916_desktop_02d9297c_scroll.gif
+2025-03-30 22:29:49,081 - web_capture - INFO - 캡처 완료: 20250330_222916_desktop_02d9297c.png
+2025-03-30 22:29:49,159 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:29:49,159 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:29:49,160 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_222949.json
+2025-03-30 22:31:24,986 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:31:24,986 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:31:25,723 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:31:25,726 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:31:25,737 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:31:25,965 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.TABLET)
+2025-03-30 22:31:25,967 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.DESKTOP)
+2025-03-30 22:31:25,967 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.MOBILE)
+2025-03-30 22:31:31,244 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223124_tablet_38167d63_scroll.gif
+2025-03-30 22:31:31,750 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:31:33,246 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223124_mobile_38167d63_scroll.gif
+2025-03-30 22:31:33,304 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223124_desktop_38167d63_scroll.gif
+2025-03-30 22:31:33,754 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:31:33,823 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:31:53,309 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223124_mobile_38167d63_scroll.gif
+2025-03-30 22:31:59,971 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223124_tablet_38167d63_scroll.gif
+2025-03-30 22:32:00,128 - web_capture - INFO - 캡처 완료: 20250330_223124_mobile_38167d63.png
+2025-03-30 22:32:00,668 - web_capture - INFO - 캡처 완료: 20250330_223124_tablet_38167d63.png
+2025-03-30 22:32:32,329 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223124_desktop_38167d63_scroll.gif
+2025-03-30 22:32:33,384 - web_capture - INFO - 캡처 완료: 20250330_223124_desktop_38167d63.png
+2025-03-30 22:32:33,448 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:32:33,448 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:32:33,450 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_223233.json
+2025-03-30 22:34:57,672 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:34:57,673 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:34:58,562 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:34:58,605 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:34:58,611 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:34:58,877 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.TABLET)
+2025-03-30 22:34:58,879 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.MOBILE)
+2025-03-30 22:34:58,879 - web_capture - INFO - 페이지 로딩 중: https://twks.ch/en (DeviceType.DESKTOP)
+2025-03-30 22:35:03,369 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223457_mobile_38167d63_scroll.gif
+2025-03-30 22:35:03,405 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223457_tablet_38167d63_scroll.gif
+2025-03-30 22:35:03,607 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223457_desktop_38167d63_scroll.gif
+2025-03-30 22:35:04,384 - web_capture - INFO - 페이지 높이: 812px, 뷰포트 높이: 812px
+2025-03-30 22:35:04,385 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:35:04,415 - web_capture - INFO - 페이지 높이: 1344px, 뷰포트 높이: 1024px
+2025-03-30 22:35:04,415 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:35:04,653 - web_capture - INFO - 페이지 높이: 1080px, 뷰포트 높이: 1080px
+2025-03-30 22:35:04,653 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:35:21,820 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223457_mobile_38167d63_scroll.gif
+2025-03-30 22:35:22,464 - web_capture - INFO - 캡처 완료: 20250330_223457_mobile_38167d63.png
+2025-03-30 22:35:38,139 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223457_tablet_38167d63_scroll.gif
+2025-03-30 22:35:38,870 - web_capture - INFO - 캡처 완료: 20250330_223457_tablet_38167d63.png
+2025-03-30 22:36:01,656 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223457_desktop_38167d63_scroll.gif
+2025-03-30 22:36:02,654 - web_capture - INFO - 캡처 완료: 20250330_223457_desktop_38167d63.png
+2025-03-30 22:36:02,712 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:36:02,712 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:36:02,713 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_223602.json
+2025-03-30 22:38:07,776 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:38:07,776 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:38:08,514 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:38:08,533 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:38:08,545 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:38:08,855 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.MOBILE)
+2025-03-30 22:38:08,858 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:38:08,859 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.TABLET)
+2025-03-30 22:38:18,754 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223807_mobile_02d9297c_scroll.gif
+2025-03-30 22:38:19,615 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223807_desktop_02d9297c_scroll.gif
+2025-03-30 22:38:19,780 - web_capture - INFO - 페이지 높이: 812px, 뷰포트 높이: 812px
+2025-03-30 22:38:19,780 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:38:19,925 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_223807_tablet_02d9297c_scroll.gif
+2025-03-30 22:38:20,627 - web_capture - INFO - 페이지 높이: 1080px, 뷰포트 높이: 1080px
+2025-03-30 22:38:20,627 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:38:20,941 - web_capture - INFO - 페이지 높이: 1024px, 뷰포트 높이: 1024px
+2025-03-30 22:38:20,941 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임
+2025-03-30 22:38:26,798 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223807_mobile_02d9297c_scroll.gif
+2025-03-30 22:38:27,363 - web_capture - INFO - 캡처 완료: 20250330_223807_mobile_02d9297c.png
+2025-03-30 22:38:34,864 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223807_tablet_02d9297c_scroll.gif
+2025-03-30 22:38:35,488 - web_capture - INFO - 캡처 완료: 20250330_223807_tablet_02d9297c.png
+2025-03-30 22:38:40,459 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_223807_desktop_02d9297c_scroll.gif
+2025-03-30 22:38:41,150 - web_capture - INFO - 캡처 완료: 20250330_223807_desktop_02d9297c.png
+2025-03-30 22:38:41,197 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:38:41,198 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:38:41,199 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_223841.json
+2025-03-30 22:40:41,115 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:40:41,730 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:40:41,926 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:40:50,296 - web_capture - INFO - GIF 생성 시작: data/captures/20250330_224041_desktop_02d9297c_scroll.gif
+2025-03-30 22:40:51,310 - web_capture - INFO - 페이지 높이: 1080px, 뷰포트 높이: 1080px
+2025-03-30 22:40:51,310 - web_capture - INFO - GIF 프레임 캡처 시작: 총 100개 프레임
+2025-03-30 22:41:19,669 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_224041_desktop_02d9297c_scroll.gif
+2025-03-30 22:41:20,344 - web_capture - INFO - 캡처 완료: 20250330_224041_desktop_02d9297c.png
+2025-03-30 22:41:20,419 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:41:20,419 - web_capture - INFO - 캡처 작업 완료 (성공: 1, 실패: 0)
+2025-03-30 22:41:20,421 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_224120.json
+2025-03-30 22:45:57,242 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:45:57,242 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:45:57,937 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:45:57,941 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:45:57,944 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:45:58,167 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:45:58,168 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.TABLET)
+2025-03-30 22:45:58,169 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.MOBILE)
+2025-03-30 22:46:09,103 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_224557_mobile_02d9297c_scroll.gif
+2025-03-30 22:46:09,905 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_224557_desktop_02d9297c_scroll.gif
+2025-03-30 22:46:11,137 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:46:11,918 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:46:13,984 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_224557_tablet_02d9297c_scroll.gif
+2025-03-30 22:46:15,995 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:46:27,802 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_224557_mobile_02d9297c_scroll.gif
+2025-03-30 22:46:28,359 - web_capture - INFO - 캡처 완료: 20250330_224557_mobile_02d9297c.png
+2025-03-30 22:46:38,469 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_224557_desktop_02d9297c_scroll.gif
+2025-03-30 22:46:39,168 - web_capture - INFO - 캡처 완료: 20250330_224557_desktop_02d9297c.png
+2025-03-30 22:46:42,799 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_224557_tablet_02d9297c_scroll.gif
+2025-03-30 22:46:43,411 - web_capture - INFO - 캡처 완료: 20250330_224557_tablet_02d9297c.png
+2025-03-30 22:46:43,456 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:46:43,456 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:46:43,458 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_224643.json
+2025-03-30 22:47:25,134 - web_capture - INFO - 1개 캡처 작업 시작
+2025-03-30 22:47:25,734 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:47:25,937 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:47:49,169 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:47:49,169 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:47:49,868 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:47:49,881 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:47:49,884 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:47:50,073 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:47:50,074 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.TABLET)
+2025-03-30 22:47:50,074 - web_capture - INFO - 페이지 로딩 중: https://www.dora.run/ (DeviceType.MOBILE)
+2025-03-30 22:47:58,682 - web_capture - INFO - 캡처 완료: 20250330_224749_mobile_02d9297c.png
+2025-03-30 22:48:02,340 - web_capture - INFO - 캡처 완료: 20250330_224749_desktop_02d9297c.png
+2025-03-30 22:48:02,494 - web_capture - INFO - 캡처 완료: 20250330_224749_tablet_02d9297c.png
+2025-03-30 22:48:02,547 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:48:02,547 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:48:02,548 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_224802.json
+2025-03-30 22:49:28,375 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:49:28,376 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:49:29,063 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:49:29,065 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:49:29,073 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:49:29,321 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:49:29,323 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-30 22:49:29,324 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-30 22:49:38,517 - web_capture - INFO - 캡처 완료: 20250330_224928_mobile_0c707c96.png
+2025-03-30 22:49:42,036 - web_capture - INFO - 캡처 완료: 20250330_224928_desktop_0c707c96.png
+2025-03-30 22:49:43,490 - web_capture - INFO - 캡처 완료: 20250330_224928_tablet_0c707c96.png
+2025-03-30 22:49:43,539 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:49:43,539 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:49:43,540 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_224943.json
+2025-03-30 22:51:53,799 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 22:51:53,799 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 22:51:54,519 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:51:54,522 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:51:54,526 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:51:54,754 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:51:54,755 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-30 22:51:54,756 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-30 22:52:02,301 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225153_desktop_0c707c96_scroll.gif
+2025-03-30 22:52:04,309 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:52:08,261 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225153_tablet_0c707c96_scroll.gif
+2025-03-30 22:52:08,465 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225153_mobile_0c707c96_scroll.gif
+2025-03-30 22:52:10,336 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:52:10,495 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 15회 방향키 입력
+2025-03-30 22:52:29,059 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225153_desktop_0c707c96_scroll.gif
+2025-03-30 22:52:29,680 - web_capture - INFO - 캡처 완료: 20250330_225153_desktop_0c707c96.png
+2025-03-30 22:52:31,608 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225153_mobile_0c707c96_scroll.gif
+2025-03-30 22:52:34,270 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225153_tablet_0c707c96_scroll.gif
+2025-03-30 22:52:34,322 - web_capture - INFO - 캡처 완료: 20250330_225153_mobile_0c707c96.png
+2025-03-30 22:52:34,844 - web_capture - INFO - 캡처 완료: 20250330_225153_tablet_0c707c96.png
+2025-03-30 22:52:34,936 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:52:34,937 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 22:52:34,939 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_225234.json
+2025-03-30 22:56:20,111 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-30 22:56:20,112 - web_capture - INFO - 6개 캡처 작업 시작
+2025-03-30 22:56:20,868 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:56:20,875 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:56:20,902 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 22:56:21,135 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 22:56:21,136 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-30 22:56:21,136 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-30 22:56:32,696 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225620_tablet_5e2b1732_scroll.gif
+2025-03-30 22:56:33,246 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225620_desktop_5e2b1732_scroll.gif
+2025-03-30 22:56:33,754 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225620_mobile_5e2b1732_scroll.gif
+2025-03-30 22:56:35,786 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:56:36,289 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:56:36,812 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:56:55,963 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225620_mobile_5e2b1732_scroll.gif
+2025-03-30 22:56:59,429 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225620_tablet_5e2b1732_scroll.gif
+2025-03-30 22:56:59,503 - web_capture - INFO - 캡처 완료: 20250330_225620_mobile_5e2b1732.png
+2025-03-30 22:56:59,607 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.DESKTOP)
+2025-03-30 22:56:59,995 - web_capture - INFO - 캡처 완료: 20250330_225620_tablet_5e2b1732.png
+2025-03-30 22:57:00,097 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.TABLET)
+2025-03-30 22:57:04,915 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225620_desktop_5e2b1732_scroll.gif
+2025-03-30 22:57:05,516 - web_capture - INFO - 캡처 완료: 20250330_225620_desktop_5e2b1732.png
+2025-03-30 22:57:05,622 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.MOBILE)
+2025-03-30 22:57:13,797 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225659_desktop_5bd78c67_scroll.gif
+2025-03-30 22:57:14,795 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225700_tablet_5bd78c67_scroll.gif
+2025-03-30 22:57:15,812 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_225705_mobile_5bd78c67_scroll.gif
+2025-03-30 22:57:16,844 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:57:17,919 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:57:18,842 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 22:57:44,146 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225705_mobile_5bd78c67_scroll.gif
+2025-03-30 22:57:44,680 - web_capture - INFO - 캡처 완료: 20250330_225705_mobile_5bd78c67.png
+2025-03-30 22:57:47,968 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225659_desktop_5bd78c67_scroll.gif
+2025-03-30 22:57:49,911 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_225700_tablet_5bd78c67_scroll.gif
+2025-03-30 22:57:50,048 - web_capture - INFO - 캡처 완료: 20250330_225659_desktop_5bd78c67.png
+2025-03-30 22:57:50,490 - web_capture - INFO - 캡처 완료: 20250330_225700_tablet_5bd78c67.png
+2025-03-30 22:57:50,579 - web_capture - INFO - 브라우저 종료
+2025-03-30 22:57:50,580 - web_capture - INFO - 캡처 작업 완료 (성공: 6, 실패: 0)
+2025-03-30 22:57:50,583 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_225750.json
+2025-03-30 23:01:38,665 - web_capture - INFO - 1개의 URL을 로드했습니다.
+2025-03-30 23:01:38,666 - web_capture - INFO - 3개 캡처 작업 시작
+2025-03-30 23:01:39,341 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 23:01:39,345 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 23:01:39,349 - web_capture - INFO - chromium 브라우저 시작
+2025-03-30 23:01:39,531 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-30 23:01:39,532 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-30 23:01:39,533 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-30 23:01:50,510 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_230138_desktop_5e2b1732_scroll.gif
+2025-03-30 23:01:51,712 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_230138_mobile_5e2b1732_scroll.gif
+2025-03-30 23:01:52,153 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250330_230138_tablet_5e2b1732_scroll.gif
+2025-03-30 23:01:53,597 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 23:01:54,810 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 23:01:55,216 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-30 23:02:17,092 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_230138_mobile_5e2b1732_scroll.gif
+2025-03-30 23:02:17,655 - web_capture - INFO - 캡처 완료: 20250330_230138_mobile_5e2b1732.png
+2025-03-30 23:02:20,844 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_230138_tablet_5e2b1732_scroll.gif
+2025-03-30 23:02:24,193 - web_capture - INFO - GIF 생성 완료: data/captures/20250330_230138_desktop_5e2b1732_scroll.gif
+2025-03-30 23:02:24,252 - web_capture - INFO - 캡처 완료: 20250330_230138_tablet_5e2b1732.png
+2025-03-30 23:02:24,794 - web_capture - INFO - 캡처 완료: 20250330_230138_desktop_5e2b1732.png
+2025-03-30 23:02:24,893 - web_capture - INFO - 브라우저 종료
+2025-03-30 23:02:24,893 - web_capture - INFO - 캡처 작업 완료 (성공: 3, 실패: 0)
+2025-03-30 23:02:24,896 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250330_230224.json
+2025-03-31 00:00:05,012 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:00:05,012 - web_capture - INFO - 6개 캡처 작업 시작
+2025-03-31 00:00:05,871 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:00:05,875 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:00:05,877 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:00:06,112 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-31 00:00:06,113 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-31 00:00:06,114 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-31 00:00:17,890 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:00:18,445 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000005_tablet_5e2b1732_scroll.gif
+2025-03-31 00:00:18,645 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:00:19,146 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000005_desktop_5e2b1732_scroll.gif
+2025-03-31 00:00:20,456 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:00:21,152 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:00:21,855 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:00:22,047 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:00:22,356 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000005_mobile_5e2b1732_scroll.gif
+2025-03-31 00:00:22,682 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:00:24,364 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:00:25,901 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:00:44,054 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000005_tablet_5e2b1732_scroll.gif
+2025-03-31 00:00:44,620 - web_capture - INFO - 캡처 완료: 20250331_000005_tablet_5e2b1732.png
+2025-03-31 00:00:44,696 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.DESKTOP)
+2025-03-31 00:00:48,779 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000005_desktop_5e2b1732_scroll.gif
+2025-03-31 00:00:50,404 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000005_mobile_5e2b1732_scroll.gif
+2025-03-31 00:00:50,508 - web_capture - INFO - 캡처 완료: 20250331_000005_desktop_5e2b1732.png
+2025-03-31 00:00:50,634 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.TABLET)
+2025-03-31 00:00:50,953 - web_capture - INFO - 캡처 완료: 20250331_000005_mobile_5e2b1732.png
+2025-03-31 00:00:51,014 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.MOBILE)
+2025-03-31 00:00:57,914 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:00:57,916 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000044_desktop_5bd78c67_scroll.gif
+2025-03-31 00:00:59,922 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:01:00,933 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:01:01,654 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:01:01,654 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000050_mobile_5bd78c67_scroll.gif
+2025-03-31 00:01:03,660 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:01:03,991 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:01:03,991 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_000050_tablet_5bd78c67_scroll.gif
+2025-03-31 00:01:04,706 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:01:06,009 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:01:07,117 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:01:29,764 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000044_desktop_5bd78c67_scroll.gif
+2025-03-31 00:01:30,360 - web_capture - INFO - 캡처 완료: 20250331_000044_desktop_5bd78c67.png
+2025-03-31 00:01:31,359 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000050_mobile_5bd78c67_scroll.gif
+2025-03-31 00:01:31,902 - web_capture - INFO - 캡처 완료: 20250331_000050_mobile_5bd78c67.png
+2025-03-31 00:01:37,297 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_000050_tablet_5bd78c67_scroll.gif
+2025-03-31 00:01:37,881 - web_capture - INFO - 캡처 완료: 20250331_000050_tablet_5bd78c67.png
+2025-03-31 00:01:37,967 - web_capture - INFO - 브라우저 종료
+2025-03-31 00:01:37,968 - web_capture - INFO - 캡처 작업 완료 (성공: 6, 실패: 0)
+2025-03-31 00:01:37,972 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250331_000137.json
+2025-03-31 00:15:01,300 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:15:01,301 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:15:01,301 - web_capture - INFO - 6개 캡처 작업 시작
+2025-03-31 00:15:02,025 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:15:02,028 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:15:02,032 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:15:02,231 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-31 00:15:02,231 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-31 00:15:02,232 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-31 00:15:09,898 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:15:10,469 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001501_tablet_5e2b1732_scroll.gif
+2025-03-31 00:15:11,587 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:15:12,089 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001501_mobile_5e2b1732_scroll.gif
+2025-03-31 00:15:12,475 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:15:13,966 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:15:14,036 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:15:14,098 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:15:14,468 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001501_desktop_5e2b1732_scroll.gif
+2025-03-31 00:15:15,622 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:15:16,476 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:15:17,998 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:15:34,087 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001501_mobile_5e2b1732_scroll.gif
+2025-03-31 00:15:36,850 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001501_tablet_5e2b1732_scroll.gif
+2025-03-31 00:15:37,412 - web_capture - INFO - 캡처 완료: 20250331_001501_mobile_5e2b1732.png
+2025-03-31 00:15:37,436 - web_capture - INFO - 캡처 완료: 20250331_001501_tablet_5e2b1732.png
+2025-03-31 00:15:37,525 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.DESKTOP)
+2025-03-31 00:15:37,538 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.TABLET)
+2025-03-31 00:15:45,106 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001501_desktop_5e2b1732_scroll.gif
+2025-03-31 00:15:45,719 - web_capture - INFO - 캡처 완료: 20250331_001501_desktop_5e2b1732.png
+2025-03-31 00:15:45,778 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.MOBILE)
+2025-03-31 00:15:52,702 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:52,704 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001537_tablet_5bd78c67_scroll.gif
+2025-03-31 00:15:53,053 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:53,053 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001537_desktop_5bd78c67_scroll.gif
+2025-03-31 00:15:54,267 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:54,267 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_001545_mobile_5bd78c67_scroll.gif
+2025-03-31 00:15:54,709 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:55,058 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:55,781 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:15:56,072 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:15:56,377 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:15:57,400 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:16:21,618 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001545_mobile_5bd78c67_scroll.gif
+2025-03-31 00:16:23,825 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001537_tablet_5bd78c67_scroll.gif
+2025-03-31 00:16:23,860 - web_capture - INFO - 캡처 완료: 20250331_001545_mobile_5bd78c67.png
+2025-03-31 00:16:24,395 - web_capture - INFO - 캡처 완료: 20250331_001537_tablet_5bd78c67.png
+2025-03-31 00:16:27,572 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_001537_desktop_5bd78c67_scroll.gif
+2025-03-31 00:16:28,183 - web_capture - INFO - 캡처 완료: 20250331_001537_desktop_5bd78c67.png
+2025-03-31 00:16:28,246 - web_capture - INFO - 브라우저 종료
+2025-03-31 00:16:28,246 - web_capture - INFO - 캡처 작업 완료 (성공: 6, 실패: 0)
+2025-03-31 00:16:28,247 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250331_001628.json
+2025-03-31 00:27:07,176 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:27:07,177 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:27:07,177 - web_capture - INFO - 캡처 시작: 2개 URL, 3개 디바이스 유형 (총 6개 작업)
+2025-03-31 00:27:07,177 - web_capture - INFO - 6개 캡처 작업 시작 (병렬 처리 수: 3)
+2025-03-31 00:27:07,177 - web_capture - INFO - 캡처 시작: https://imweb.me/ (desktop)
+2025-03-31 00:27:07,177 - web_capture - INFO - 캡처 시작: https://imweb.me/ (tablet)
+2025-03-31 00:27:07,177 - web_capture - INFO - 캡처 시작: https://imweb.me/ (mobile)
+2025-03-31 00:27:07,876 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:07,881 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:07,883 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:08,091 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:08,092 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:08,108 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:08,109 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:09,178 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:09,179 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:09,189 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:09,190 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:11,232 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:11,233 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:11,241 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:27:11,242 - web_capture - INFO - 캡처 시작: https://dora.run/ (desktop)
+2025-03-31 00:27:11,243 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:27:11,243 - web_capture - INFO - 캡처 시작: https://dora.run/ (tablet)
+2025-03-31 00:27:11,280 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:11,286 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:12,178 - web_capture - INFO - 진행 상황: 2/6 (33.3%) 완료
+2025-03-31 00:27:12,330 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:12,335 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:14,416 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:14,433 - web_capture - ERROR - 최대 재시도 횟수 초과: https://dora.run/
+2025-03-31 00:27:14,433 - web_capture - INFO - 캡처 시작: https://dora.run/ (mobile)
+2025-03-31 00:27:14,491 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:14,498 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:15,536 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:15,541 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:17,178 - web_capture - INFO - 진행 상황: 3/6 (50.0%) 완료
+2025-03-31 00:27:17,584 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:17,592 - web_capture - ERROR - 최대 재시도 횟수 초과: https://dora.run/
+2025-03-31 00:27:22,179 - web_capture - INFO - 진행 상황: 4/6 (66.7%) 완료
+2025-03-31 00:27:45,665 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:27:45,665 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:27:45,665 - web_capture - INFO - 캡처 시작: 2개 URL, 3개 디바이스 유형 (총 6개 작업)
+2025-03-31 00:27:45,665 - web_capture - INFO - 6개 캡처 작업 시작 (병렬 처리 수: 3)
+2025-03-31 00:27:45,666 - web_capture - INFO - 캡처 시작: https://imweb.me/ (desktop)
+2025-03-31 00:27:45,666 - web_capture - INFO - 캡처 시작: https://imweb.me/ (tablet)
+2025-03-31 00:27:45,666 - web_capture - INFO - 캡처 시작: https://imweb.me/ (mobile)
+2025-03-31 00:27:46,027 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:46,033 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:46,036 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:27:46,121 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:46,122 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:46,133 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:46,134 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:47,179 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:47,181 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:47,191 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:47,192 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:49,253 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:49,254 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:49,262 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:27:49,263 - web_capture - INFO - 캡처 시작: https://dora.run/ (desktop)
+2025-03-31 00:27:49,264 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:27:49,264 - web_capture - INFO - 캡처 시작: https://dora.run/ (tablet)
+2025-03-31 00:27:49,303 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:49,311 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:50,357 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:50,369 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:50,666 - web_capture - INFO - 진행 상황: 2/6 (33.3%) 완료
+2025-03-31 00:27:52,409 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:52,413 - web_capture - ERROR - 최대 재시도 횟수 초과: https://dora.run/
+2025-03-31 00:27:52,413 - web_capture - INFO - 캡처 시작: https://dora.run/ (mobile)
+2025-03-31 00:27:52,448 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:52,453 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:27:53,495 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:53,500 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:27:55,554 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:27:55,560 - web_capture - ERROR - 최대 재시도 횟수 초과: https://dora.run/
+2025-03-31 00:27:55,666 - web_capture - INFO - 진행 상황: 4/6 (66.7%) 완료
+2025-03-31 00:32:42,152 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:32:42,153 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:32:42,153 - web_capture - INFO - 캡처 시작: 2개 URL, 3개 디바이스 유형 (총 6개 작업)
+2025-03-31 00:32:42,154 - web_capture - INFO - 6개 캡처 작업 시작 (병렬 처리 수: 3)
+2025-03-31 00:32:42,154 - web_capture - INFO - 캡처 시작: https://imweb.me/ (desktop)
+2025-03-31 00:32:42,154 - web_capture - INFO - 캡처 시작: https://imweb.me/ (tablet)
+2025-03-31 00:32:42,154 - web_capture - INFO - 캡처 시작: https://imweb.me/ (mobile)
+2025-03-31 00:32:42,840 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:32:42,848 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:32:42,849 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:32:47,155 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:32:52,157 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:32:57,160 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:02,162 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:07,164 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:12,166 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:17,168 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:22,172 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:27,175 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:32,177 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:37,182 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:42,184 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:47,188 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:52,190 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:33:57,191 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:02,194 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:07,196 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:12,198 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:17,204 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:22,205 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:27,207 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:32,210 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:37,211 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:34:42,213 - web_capture - INFO - 진행 상황: 0/6 (0.0%) 완료
+2025-03-31 00:35:22,857 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:35:22,858 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:35:22,858 - web_capture - INFO - 캡처 시작: 2개 URL, 3개 디바이스 유형 (총 6개 작업)
+2025-03-31 00:35:22,858 - web_capture - INFO - 6개 캡처 작업 시작 (병렬 처리 수: 3)
+2025-03-31 00:35:22,859 - web_capture - INFO - 캡처 시작: https://imweb.me/ (desktop)
+2025-03-31 00:35:22,859 - web_capture - INFO - 캡처 시작: https://imweb.me/ (tablet)
+2025-03-31 00:35:22,859 - web_capture - INFO - 캡처 시작: https://imweb.me/ (mobile)
+2025-03-31 00:35:23,607 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:35:23,619 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:35:23,686 - web_capture - INFO - chromium 브라우저 시작됨
+2025-03-31 00:35:23,982 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:23,983 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:23,999 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:35:24,000 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:35:25,057 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:25,058 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:25,075 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:35:25,077 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:35:27,131 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:27,132 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:27,139 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:35:27,140 - web_capture - INFO - 캡처 시작: https://dora.run/ (desktop)
+2025-03-31 00:35:27,141 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:35:27,141 - web_capture - INFO - 캡처 시작: https://dora.run/ (tablet)
+2025-03-31 00:35:27,183 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:27,191 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:35:27,860 - web_capture - INFO - 진행 상황: 2/6 (33.3%) 완료
+2025-03-31 00:35:28,245 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:35:28,251 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:37:51,112 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:37:51,114 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:37:51,114 - web_capture - INFO - 캡처 시작: 2개 URL, 3개 디바이스 유형 (총 6개 작업)
+2025-03-31 00:37:51,114 - web_capture - INFO - 6개 캡처 작업 시작 (병렬 처리 수: 3)
+2025-03-31 00:37:51,114 - web_capture - INFO - 캡처 시작: https://imweb.me/ (desktop)
+2025-03-31 00:37:51,114 - web_capture - INFO - 캡처 시작: https://imweb.me/ (tablet)
+2025-03-31 00:37:51,114 - web_capture - INFO - 캡처 시작: https://imweb.me/ (mobile)
+2025-03-31 00:37:51,811 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:37:51,814 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:37:51,817 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:37:52,084 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:52,085 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:52,100 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:37:52,101 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:37:53,148 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:53,149 - web_capture - WARNING - 캡처 실패 (2/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:53,160 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:37:53,161 - web_capture - INFO - 재시도 중... (2/2)
+2025-03-31 00:37:55,220 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:55,221 - web_capture - WARNING - 캡처 실패 (3/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:55,230 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:37:55,231 - web_capture - INFO - 캡처 시작: https://dora.run/ (desktop)
+2025-03-31 00:37:55,232 - web_capture - ERROR - 최대 재시도 횟수 초과: https://imweb.me/
+2025-03-31 00:37:55,232 - web_capture - INFO - 캡처 시작: https://dora.run/ (tablet)
+2025-03-31 00:37:55,277 - web_capture - WARNING - 캡처 실패 (1/2): Page.emulate_media() takes 1 positional argument but 2 were given
+2025-03-31 00:37:55,288 - web_capture - INFO - 재시도 중... (1/2)
+2025-03-31 00:46:17,394 - web_capture - INFO - 2개의 URL을 로드했습니다.
+2025-03-31 00:46:17,394 - web_capture - INFO - 웹 캡처 시작: 2개 URL, 3개 디바이스 유형
+2025-03-31 00:46:17,394 - web_capture - INFO - 6개 캡처 작업 시작
+2025-03-31 00:46:18,047 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:46:18,054 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:46:18,060 - web_capture - INFO - chromium 브라우저 시작
+2025-03-31 00:46:18,243 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.TABLET)
+2025-03-31 00:46:18,244 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.MOBILE)
+2025-03-31 00:46:18,245 - web_capture - INFO - 페이지 로딩 중: https://imweb.me/ (DeviceType.DESKTOP)
+2025-03-31 00:46:29,634 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:46:30,194 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004617_desktop_5e2b1732_scroll.gif
+2025-03-31 00:46:30,247 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:46:30,748 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004617_tablet_5e2b1732_scroll.gif
+2025-03-31 00:46:30,760 - web_capture - INFO - 채널톡 메신저 닫기 실행
+2025-03-31 00:46:31,262 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004617_mobile_5e2b1732_scroll.gif
+2025-03-31 00:46:32,204 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:46:32,755 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:46:33,270 - web_capture - INFO - GIF 생성 전 채널톡 메신저 닫기 실행
+2025-03-31 00:46:33,784 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:46:34,303 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:46:34,813 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:46:53,610 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004617_mobile_5e2b1732_scroll.gif
+2025-03-31 00:46:54,164 - web_capture - INFO - 캡처 완료: 20250331_004617_mobile_5e2b1732.png
+2025-03-31 00:46:54,262 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.DESKTOP)
+2025-03-31 00:46:57,823 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004617_tablet_5e2b1732_scroll.gif
+2025-03-31 00:46:58,433 - web_capture - INFO - 캡처 완료: 20250331_004617_tablet_5e2b1732.png
+2025-03-31 00:46:58,583 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.TABLET)
+2025-03-31 00:47:03,346 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004617_desktop_5e2b1732_scroll.gif
+2025-03-31 00:47:03,954 - web_capture - INFO - 캡처 완료: 20250331_004617_desktop_5e2b1732.png
+2025-03-31 00:47:04,035 - web_capture - INFO - 페이지 로딩 중: https://dora.run/ (DeviceType.MOBILE)
+2025-03-31 00:47:05,355 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:05,355 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004654_desktop_5bd78c67_scroll.gif
+2025-03-31 00:47:07,286 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:07,287 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004658_tablet_5bd78c67_scroll.gif
+2025-03-31 00:47:07,362 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:08,375 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:47:09,292 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:10,527 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:47:10,662 - web_capture - WARNING - 채널톡 메신저 닫기 실패 (무시하고 계속 진행): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:10,663 - web_capture - INFO - GIF 생성 시작 (방향키 스크롤): data/captures/20250331_004703_mobile_5bd78c67_scroll.gif
+2025-03-31 00:47:12,668 - web_capture - WARNING - GIF 생성 전 채널톡 메신저 닫기 실패 (무시): Page.evaluate: TypeError: window.ChannelIO is not a function
+    at eval (eval at evaluate (:234:30), <anonymous>:1:8)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:234:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2025-03-31 00:47:13,727 - web_capture - INFO - GIF 프레임 캡처 시작: 총 50개 프레임, 20회 키 입력
+2025-03-31 00:47:38,342 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004654_desktop_5bd78c67_scroll.gif
+2025-03-31 00:47:38,956 - web_capture - INFO - 캡처 완료: 20250331_004654_desktop_5bd78c67.png
+2025-03-31 00:47:41,278 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004658_tablet_5bd78c67_scroll.gif
+2025-03-31 00:47:41,838 - web_capture - INFO - 캡처 완료: 20250331_004658_tablet_5bd78c67.png
+2025-03-31 00:47:42,760 - web_capture - INFO - GIF 생성 완료: data/captures/20250331_004703_mobile_5bd78c67_scroll.gif
+2025-03-31 00:47:43,311 - web_capture - INFO - 캡처 완료: 20250331_004703_mobile_5bd78c67.png
+2025-03-31 00:47:43,357 - web_capture - INFO - 브라우저 종료
+2025-03-31 00:47:43,358 - web_capture - INFO - 캡처 작업 완료 (성공: 6, 실패: 0)
+2025-03-31 00:47:43,359 - web_capture - INFO - 메타데이터 저장 완료: data/captures/metadata_20250331_004743.json

@@ -56,12 +56,7 @@ interface Capture {
 }
 
 // SWR 패쳐 함수 정의
-const siteFetcher = (url: string) => {
-  // ID에서 하이픈(-) 제거하여 백엔드가 기대하는 형식으로 변환
-  const formattedId = url.replace(/-/g, "")
-  return siteApi.getById(formattedId)
-}
-
+const siteFetcher = (url: string) => siteApi.getById(url)
 const capturesFetcher = ([url, siteId]: [string, string]) =>
   captureApi.getAll({ site_id: siteId, limit: 5 })
 
